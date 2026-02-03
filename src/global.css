@@ -282,6 +282,10 @@ button:focus-visible {
   .hero-stats {
     grid-template-columns: 1fr;
   }
+  .btn-primary{
+    padding: 20px 30px;
+    margin-bottom: 40px;
+  }
 }
 
 /* Chart header */
