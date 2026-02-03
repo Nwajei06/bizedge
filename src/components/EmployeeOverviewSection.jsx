@@ -100,7 +100,7 @@ function OverviewSection() {
       {/* IMAGE ONLY — NO CARD */}
       <div className="overview-image-wrap">
         <img
-          src="/images/complaints-table.png"
+          src="/images/bizedge-admin.png"
           alt="Complaints table"
           className="overview-image"
         />
