@@ -65,46 +65,83 @@ function OverviewSection() {
           </div>
 
           {/* RIGHT – investigation card */}
-          <div className="investigation-card">
-            <div className="investigation-header">
-              <strong>Complaint Type : Persistent Lateness</strong>
+          <div className="investigation-card figma-investigation">
+
+            {/* HEADER */}
+            <div className="investigation-header figma-header">
+              <div className="complaint-title">
+                Complaint Type : Persistent Lateness
+              </div>
+
+              <div className="complaint-user">
+                <img src="https://i.pravatar.cc/32?img=12" alt="" />
+                <div>
+                  <strong>Jayrock Ollie</strong>
+                  <div>Operations Assistant</div>
+                </div>
+              </div>
             </div>
 
-            <div className="investigation-tabs">
+            {/* TABS */}
+            <div className="investigation-tabs figma-tabs">
               <span className="active">Collaborators</span>
               <span>Meetings</span>
               <span>Notes</span>
             </div>
 
-            <div className="investigation-user">
-              <img src="https://i.pravatar.cc/32?img=5" alt="" />
-              <div>
-                <strong>Animashaun Adeeko</strong>
-                <div>Lead Designer</div>
-              </div>
-              <span className="role-pill">Investigation Manager</span>
-            </div>
+            {/* USERS */}
+            <div className="investigation-user success">
+  <img src="https://i.pravatar.cc/32?img=5" alt="" />
+  <div>
+    <strong>Animashaun Adeeko</strong>
+    <div>Lead Designer</div>
+  </div>
 
-            <div className="investigation-user">
-              <img src="https://i.pravatar.cc/32?img=15" alt="" />
-              <div>
-                <strong>Queens Jonah</strong>
-                <div>Head, Welfare</div>
-              </div>
-              <span className="role-pill muted">Witness</span>
-            </div>
+  <span className="role-pill">Investigation Manager</span>
+
+  <button className="user-menu">⋮</button>
+</div>
+
+<div className="investigation-user success">
+  <img src="https://i.pravatar.cc/32?img=15" alt="" />
+  <div>
+    <strong>Queens Jonah</strong>
+    <div>Head, Welfare</div>
+  </div>
+
+  <span className="role-pill muted">Witness</span>
+
+  <button className="user-menu">⋮</button>
+</div>
+
+
+
           </div>
         </div>
       </div>
 
-      {/* IMAGE ONLY — NO CARD */}
-      <div className="overview-image-wrap">
-        <img
-          src="/images/bizedge-admin.png"
-          alt="Complaints table"
-          className="overview-image"
-        />
-      </div>
+
+      {/* ROW 3 */}
+<div className="overview-card">
+  <div className="overview-row">
+
+    <img
+      src="/images/bizedge-admin.png"
+      alt="Complaints table"
+      className="overview-image"
+    />
+
+    <div className="overview-text">
+      <h2>Manage Employee Complaints</h2>
+      <p>
+        Keep track of your assets maintenance and get up to date reminders
+        on upcoming or overdue maintenance schedules.
+      </p>
+    </div>
+
+  </div>
+</div>
+
 
     </section>
   );

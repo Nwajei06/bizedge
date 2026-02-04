@@ -432,10 +432,12 @@ button:focus-visible {
 
 /* ===== WRAPPER ===== */
 .overview-wrap {
+  width: 100%;
   max-width: 1200px;
   margin: 60px auto;
-  padding: 0 16px;
+  padding: 0 24px; /* desktop spacing */
 }
+
 
 /* ===== MAIN CARD ===== */
 .overview-card {
@@ -521,11 +523,18 @@ button:focus-visible {
 }
 
 /* ===== INVESTIGATION ===== */
+/* ===== INVESTIGATION CARD (BIGGER LIKE FIGMA) ===== */
 .investigation-card {
   background: #fff;
-  border-radius: 16px;
-  padding: 16px;
+  border-radius: 20px;
+  padding: 28px;
+  width: 100%;
+  max-width: 720px; /* ⬅ wider like Figma */
+  box-shadow:
+    0 12px 32px rgba(15, 23, 42, 0.08),
+    0 4px 12px rgba(15, 23, 42, 0.04);
 }
+
 
 .investigation-header {
   background: #ecfeff;
@@ -558,15 +567,22 @@ button:focus-visible {
   font-weight: 500;
 }
 
+/* ===== INVESTIGATION USERS (FIGMA MATCH) ===== */
+/* ===== INVESTIGATION USERS (MATCH COMPLAINT PREVIEW STYLE) ===== */
 .investigation-user {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: #f8fafc;
-  padding: 10px;
-  border-radius: 12px;
-  margin-bottom: 8px;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 12px;
 }
+
+.investigation-user.success {
+  background: #ecfeff; /* SAME as resolved preview */
+  font-size: small;
+}
+
 
 .role-pill {
   margin-left: auto;
@@ -574,12 +590,13 @@ button:focus-visible {
   padding: 4px 10px;
   border-radius: 999px;
   background: #e0f2fe;
-  color: #0369a1;
+  color: #0369a1;   
 }
 
 .role-pill.muted {
   background: #e5e7eb;
-  color: #475569;
+    color: #0369a1;
+
 }
 
 /* ===== IMAGE (NO BORDER, SHADOW ONLY) ===== */
@@ -607,5 +624,302 @@ button:focus-visible {
 
   .overview-image-wrap {
     margin-top: 24px;
+  }
+}
+
+
+/* === FIGMA FIXES FOR INVESTIGATION CARD === */
+
+.figma-investigation {
+  max-width: 480px;     /* ⬅ increased width */
+  justify-self: start;  /* keeps it close to text */
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.08),
+    0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+
+/* Header tone + spacing */
+.figma-header {
+  background: #e6f6f7;            /* softer Figma teal */
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.figma-header .complaint-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Tabs tighter like Figma */
+.figma-tabs {
+  padding: 4px;
+  gap: 4px;
+}
+
+/* User rows more compact */
+.figma-user {
+  padding: 10px 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* First user (Investigation Manager) */
+.figma-user:first-of-type {
+  background: #eef4ff; /* light blue like Figma */
+}
+
+/* Second user (Witness) */
+.figma-user:last-of-type {
+  background: #f8fafc; /* light gray like Figma */
+}
+
+/* Role colors */
+.role-pill.manager {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.user-menu {
+  margin-left: 12px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #64748b;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.user-menu:hover {
+  color: #0f172a;
+}
+
+
+@media (max-width: 768px) {
+
+  /* Make section truly full width */
+  .overview-wrap {
+    max-width: 100%;
+    padding: 0 12px; /* small safe gutter like Figma */
+  }
+
+  /* Cards should fill screen */
+  .overview-card {
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  /* Stack rows */
+  .overview-row,
+  .overview-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Investigation card should NOT float */
+  .investigation-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  /* Tabs stay readable */
+  .investigation-tabs span {
+    font-size: 11px;
+  }
+
+  /* User rows breathe */
+  .investigation-user {
+    padding: 12px;
+  }
+
+  /* Pills don’t push layout */
+  .role-pill {
+    white-space: nowrap;
+    font-size: 10px;
+  }
+
+  /* Image section */
+  .overview-image-wrap {
+    margin-top: 24px;
+    padding: 0 12px;
+  }
+
+  .overview-image {
+    max-width: 100%;
+  }
+}
+
+
+/* ===== HARD MOBILE OVERRIDE ===== */
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .overview-wrap {
+  max-width: none !important;
+  width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 16px !important; /* 👈 normal mobile gutter */
+}
+
+
+  .overview-card {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 0 24px 0 !important;
+    padding: 20px 18px!important;
+    border-radius: 18px;
+  }
+
+  .overview-row,
+  .overview-row.reverse {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .investigation-card {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .overview-image-wrap {
+    margin: 24px 0 0 0 !important;
+    padding: 0 12px !important;
+  }
+
+  .overview-image {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .overview-wrap {
+    padding: 24px 16px;   /* 👈 proper mobile page spacing */
+  }
+
+  .overview-card {
+    margin-bottom: 24px; /* 👈 space between stacked cards */
+  }
+
+  .investigation-card {
+    margin-top: 12px;    /* 👈 separates text from card */
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .overview-wrap {
+    margin: 32px auto;
+    padding: 0 20px;   /* ✅ proper mobile gutter */
+  }
+
+  .overview-card {
+    padding: 20px;
+  }
+
+  .investigation-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* overall section */
+  .overview-wrap {
+    padding: 0 16px;
+    margin: 32px auto;
+  }
+
+  /* cards */
+  .overview-card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  /* rows stack */
+  .overview-row,
+  .overview-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* text */
+  .overview-text h4 {
+    font-size: 15px;
+  }
+
+  .overview-text p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* complaint previews */
+  .complaint-preview {
+    padding: 12px;
+  }
+
+  .complaint-title {
+    font-size: 12px;
+  }
+
+  /* investigation card */
+  .investigation-card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .investigation-header {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  /* tabs */
+  .investigation-tabs {
+    padding: 4px;
+  }
+
+  .investigation-tabs span {
+    font-size: 11px;
+    padding: 6px 0;
+  }
+
+  /* users */
+  .investigation-user {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .investigation-user img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .role-pill {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  /* image preview */
+  .overview-image {
+    max-width: 100%;
+    border-radius: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .overview-card,
+  .investigation-card {
+    width: 100%;
+    box-sizing: border-box;
   }
 }

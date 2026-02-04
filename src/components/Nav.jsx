@@ -1,8 +1,10 @@
+import { NavLink } from "react-router-dom";
+
+
 function Nav() {
   return (
     <nav className="nav">
       <div className="nav-inner">
-
         {/* Left */}
         <div className="nav-left">
           <img
@@ -25,7 +27,7 @@ function Nav() {
 
         {/* Right */}
         <div className="nav-right">
-          <img className="nav-icon" src="./images/union.png" alt="Home" />
+         <NavLink to="/home"><img className="nav-icon" src="./images/union.png" alt="Home" /></NavLink>
           <img className="nav-icon" src="./images/app-icon.png" alt="Apps" />
           <img className="nav-icon" src="./images/info-but.png" alt="Info" />
           <img className="nav-icon" src="./images/notifi-but.png" alt="Notifications" />
