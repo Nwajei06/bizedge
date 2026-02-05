@@ -43,7 +43,7 @@ function OverviewSection() {
 
           {/* RIGHT – text */}
           <div className="overview-text">
-            <h4>View Record Of Employee Complaints</h4>
+            <h2>View Record Of Employee Complaints</h2>
             <p>
               Asides from our default asset types, you can create your own
               unique asset type for easier tracking of your assets.
@@ -58,7 +58,7 @@ function OverviewSection() {
 
           {/* LEFT – text */}
           <div className="overview-text">
-            <h4>Setup Investigation & Assign Investigation Managers</h4>
+            <h2>Setup Investigation & Assign Investigation Managers</h2>
             <p>
               Assign assets to departments, employees or to a location.
             </p>

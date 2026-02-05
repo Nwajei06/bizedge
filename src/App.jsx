@@ -8,13 +8,14 @@ import "./global.css";
 function App() {
   return (
     <>
-      <Nav />
+      
 
       <Routes>
         <Route
           path="/"
           element={
             <>
+            <Nav />
               <DashboardHero />
               <EmployeeOverviewSection />
             </>

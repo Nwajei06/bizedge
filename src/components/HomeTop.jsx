@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
-// import "./home.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCakeCandles } from "@fortawesome/free-solid-svg-icons";
+
+import NavClone from "./NavClone";
+import SubNav from "../components/SubNav";
+import HomeHeader from "./HomeHeader";
+import TimeoffSection from "./TimeoffSection";
 
 function HomeTop() {
   const [time, setTime] = useState(new Date());
+  const [mode, setMode] = useState("On-Site");
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTime(new Date());
-    }, 60000); // update every minute
+    const interval = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -23,75 +28,106 @@ function HomeTop() {
   ];
 
   return (
-    <section className="home-top">
-      {/* LEFT */}
-     <div className="card attendance-card">
-  <p className="attendance-title">Daily Attendance</p>
-  <p className="attendance-date">Wednesday 27th, 2021</p>
+    <>
+      <NavClone />
+      <SubNav />
+      <HomeHeader />
 
-  <div className="attendance-toggle">
-    <span>Remote</span>
-    <span className="active">On-Site</span>
-  </div>
+      {/* MAIN GRID */}
+      <section className="home-top">
+        {/* ATTENDANCE */}
+        <div className="card attendance-card">
+          <p className="attendance-title">Daily Attendance</p>
+          <p className="attendance-date">Wednesday 27th, 2021</p>
 
-  <p className="greeting">Good Morning</p>
-
-  <div className="time-boxes">
-    <span>0</span>
-    <span>9</span>
-    <span className="colon">:</span>
-    <span>3</span>
-    <span>0</span>
-  </div>
-
-  <div className="clock-hint">Clock in time&nbsp;&nbsp;00:00</div>
-
-  <button className="clock-btn">Clock in</button>
-
-  <p className="status">
-    Status: <span className="present">Present</span>
-  </p>
-</div>
-
-
-      {/* MIDDLE */}
-      <div className="card activity-card">
-        <h3>
-          Activity <span className="count">5</span>
-        </h3>
-
-        {activities.map((item, i) => (
-          <div className="activity-row" key={i}>
-            <p>{item.text}</p>
-            <span className="action">{item.action}</span>
+          <div className="attendance-toggle">
+            <span
+              className={mode === "Remote" ? "active" : ""}
+              onClick={() => setMode("Remote")}
+            >
+              Remote
+            </span>
+            <span
+              className={mode === "On-Site" ? "active" : ""}
+              onClick={() => setMode("On-Site")}
+            >
+              On-Site
+            </span>
           </div>
-        ))}
-      </div>
 
-      {/* RIGHT */}
-      <div className="card celebration-card">
-        <h3>Celebration</h3>
-        <span className="pill">Birthdays</span>
+          <div className="attendance-inner">
+            <p className="greeting">Good Morning</p>
 
-        <div className="birthday-row">
-          <img src="https://i.pravatar.cc/40?img=11" alt="" />
-          <div>
-            <strong>John Micheal</strong>
-            <p>Leader Designer</p>
+            <div className="time-boxes">
+              <span>{hours[0]}</span>
+              <span>{hours[1]}</span>
+              <span className="colon">:</span>
+              <span>{minutes[0]}</span>
+              <span>{minutes[1]}</span>
+            </div>
+
+            <div className="clock-hint">Clock in time 00:00</div>
+            <button className="clock-btn">Clock in</button>
+
+            <p className="status">
+              Status: <span className="present">Present</span>
+            </p>
           </div>
-          <span className="date-pill">Jan 23</span>
         </div>
 
-        <div className="birthday-row">
-          <img src="https://i.pravatar.cc/40?img=12" alt="" />
-          <div>
-            <strong>John Micheal</strong>
-            <p>Leader Designer</p>
+        {/* ACTIVITY */}
+        <div className="card activity-card">
+          <h3>
+            Activity <span className="count">5</span>
+          </h3>
+
+          <div className="activity-list">
+            {activities.map((item, i) => (
+              <div className="activity-row" key={i}>
+                <p>{item.text}</p>
+                <span className="action">{item.action}</span>
+              </div>
+            ))}
           </div>
-          <span className="date-pill">Jan 23</span>
         </div>
-      </div>
-    </section>
+
+        {/* CELEBRATION */}
+        <div className="card celebration-card">
+          <h3>Celebration</h3>
+
+          <span className="pill">
+            <button className="birth-but">Birthdays</button>
+          </span>
+
+          <p className="section-label">Today</p>
+
+          <div className="celebration-scroll">
+            {[11, 12, 13, 14, 15].map((img, i) => (
+              <div className={`birthday-row ${i === 0 ? "active" : ""}`} key={i}>
+                <img src={`https://i.pravatar.cc/40?img=${img}`} alt="" />
+
+                <div className="birthday-info">
+                  <strong>John Micheal</strong>
+                  <p>Leader Designer</p>
+                </div>
+
+                <div className="birthday-right">
+                  <FontAwesomeIcon icon={faCakeCandles} className="cake-icon" />
+                  <span className="date-pill">Jan 23</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="upcoming">
+            Upcoming Birthdays <span className="chevron">⌄</span>
+          </div>
+        </div>
+      </section>
+
+      {/* TIMEOFF + SIDE PANELS (NEW SECTION) */}
+      <TimeoffSection />
+    </>
   );
 }
 
