@@ -695,3 +695,43 @@
   background: #cbd5e1;
   border-radius: 999px;
 }
+
+.record-row img {
+  border-radius: 50%;
+}
+.team-row img {
+  border-radius: 50%;
+}
+
+
+/* ===== Timeoff Record Layout Fix ===== */
+
+.record-item {
+  align-items: flex-start;
+}
+
+.record-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.record-role {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.record-dates {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+.record-dates span {
+  margin: 0 6px;
+}
+
+.pill-right {
+  margin-left: auto;
+  align-self: center;
+}

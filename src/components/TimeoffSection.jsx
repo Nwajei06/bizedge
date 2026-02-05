@@ -87,23 +87,37 @@ function TimeoffSection() {
           <div className="card record-scroll">
             <h3>Timeoff Record</h3>
 
-            <div className="record-row"  style={{background: "#FEF6E6"}}>
-              <img src="https://i.pravatar.cc/40" alt="" />
-              <div>
-                <strong >John Micheal</strong>
-                <p>Leader Designer</p>
-              </div>
-              <span className="pill-warning">2 Days</span>
-            </div>
+           <div className="record-row record-item" style={{ background: "#FEF6E6" }}>
+  <img src="https://i.pravatar.cc/40" alt="" />
 
-            <div className="record-row" style={{background: "#FEF6E6"}}>
-              <img src="https://i.pravatar.cc/41" alt="" />
-              <div>
-                <strong>John Micheal</strong>
-                <p>Leader Designer</p>
-              </div>
-              <span className="pill-warning">2 Days</span>
-            </div>
+  <div className="record-content">
+    <strong>John Micheal</strong>
+    <p className="record-role">Leader Designer</p>
+
+    <p className="record-dates">
+      Start Date: Jan 23 <span>|</span> End Date: Jan 25, 2022
+    </p>
+  </div>
+
+  <span className="pill-warning pill-right">2 Days</span>
+</div>
+
+<div className="record-row record-item" style={{ background: "#FEF6E6" }}>
+  <img src="https://i.pravatar.cc/40" alt="" />
+
+  <div className="record-content">
+    <strong>John Micheal</strong>
+    <p className="record-role">Leader Designer</p>
+
+    <p className="record-dates">
+      Start Date: Jan 23 <span>|</span> End Date: Jan 25, 2022
+    </p>
+  </div>
+
+  <span className="pill-warning pill-right">2 Days</span>
+</div>
+
+
           </div>
 
           {/* MY TEAMS */}
@@ -115,7 +129,7 @@ function TimeoffSection() {
                 <img src={`https://i.pravatar.cc/40?img=${i}`} alt="" />
                 <div>
                   <strong>John Micheal</strong>
-                  <p>Founder</p>
+                  <p style={{fontSize:"smaller"}}>Founder</p>
                 </div>
                 <button className="btn-light">Contact</button>
               </div>
@@ -124,7 +138,7 @@ function TimeoffSection() {
         </div>
       </div>
     </section>
-    
+      
   );
 }
 
