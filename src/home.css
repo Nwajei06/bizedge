@@ -509,229 +509,858 @@
   }
 }
 
-/* ---------------------------TIME OFF ----------------------- */
-/* ---------------- TIMEOFF LAYOUT ---------------- */
-/* TIMEOFF HEADER */
+
+/* -------------------TIMEOUT SECTION ------------------- */
+.timeout-container{
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      margin: 50px;
+      width: auto;
+      height: auto;
+}
+.aside-left{
+  display: flex;
+  flex-direction: column;
+  gap:30px;
+  width: 69%;
+  /* border: #475569 solid 1px; */
+  border-radius: 30px;
+  /* height: 50%; */
+  padding-left: 30px;
+
+}
+.aside-right{
+  display: flex;
+  flex-direction: column;
+  gap:30px;
+  width: 40%;
+  /* border: #475569 solid 1px; */
+  border-radius: 30px;
+
+
+}
+.card-complaint{
+  border-radius: 15px;
+  background: #FFFFFF;
+   /* background: #fff; */
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  font-family: system-ui, sans-serif;
+
+}
+
+.card-complaint h3{
+ font-weight: semi-bold;
+ font-size: 22px;
+ font-family: black sans-serif;
+ 
+}
+
+.but1{
+  padding: 12px;
+  border-top-left-radius:10px ;
+  border-bottom-left-radius:10px ;
+  border: none;
+  background: #4069D0;
+color: white;
+}
+.but2{
+  padding: 12px;
+   border-top-right-radius:10px ;
+  border-bottom-right-radius:10px ;
+  border: none;
+  background: #4069D0;
+
+}
+.arr-right-left button{
+  background: #EAF8FA;
+  border: none;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+}
+/* .status-cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+
+
+.status-cards {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+
+
+
+
+.timeoff-card {
+  width: 200px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  text-align: center;
+  font-family: system-ui, sans-serif;
+}
+
+.timeoff-card h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.progress-wrapper {
+  margin-bottom: 20px;
+}
+
+.progress-circle {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: conic-gradient(
+    #e6e6e6 0deg,
+    #e6e6e6 270deg,
+    #f2f2f2 270deg
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-circle::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.progress-circle span {
+  position: relative;
+}
+
+.days {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.label {
+  font-size: 12px;
+  color: #666;
+}
+
+.sub {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #666;
+}
+.timeoff-card {
+  width: 200px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  text-align: center;
+  font-family: system-ui, sans-serif;
+  flex: 0 0 auto;      /* prevents shrinking */
+  scroll-snap-align: start;
+}
+
+.timeoff-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.arc-container {
+  position: relative;
+  height: 95px;
+  margin-bottom: 20px;
+}
+
+.arc-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.arc-text {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.days {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.label {
+  font-size: 13px;
+}
+
+.sub {
+  font-size: 13px;
+  color: #777;
+  margin-top: 2px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #e8f0ff;
+  color: #2f6bff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.btn.ghost {
+  background: #f7f7f7;
+  color: #555;
+}
+
+
+
+.status-cards::-webkit-scrollbar {
+  height: 6px;
+    display: none;
+}
+
+.status-cards::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: #ddd;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: #2f6bff;
+}
+
+
+
+
+
+
+.aside-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* width: 390px; */
+
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  font-family: system-ui, sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.header h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header a {
+  font-size: 13px;
+  color: #1f6fff;
+  text-decoration: none;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background: #f2f2f2;
+  border-radius: 30px;
+  padding: 4px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 8px 0;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.tab span {
+  background: #ff6b6b;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 4px;
+}
+
+.tab.active {
+  background: #fff;
+  font-weight: 600;
+}
+
+/* Records */
+.records {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.records::-webkit-scrollbar {
+  width: 6px;
+}
+
+.records::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+/* Single record */
+.record {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff3dc;
+  padding: 12px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.record img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+max-height: 280px;
+  overflow-y: auto;
+  padding-right: 6px;
+
+}
+
+.info {
+  flex: 1;
+}
+
+.info strong {
+  display: block;
+  font-size: 14px;
+}
+
+.info span {
+  font-size: 12px;
+  color: #777;
+}
+
+.info small {
+  display: block;
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.badge {
+  background: #ffd88a;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* ---------------------benefit----------------------- */
+/* ---------------------benefit----------------------- */
+
+.card-benefits {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  font-family: system-ui, sans-serif;
+}
+
+.card-benefits h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Benefit card */
+.benefit-card {
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+/* Top section */
+.benefit-top {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon img {
+  width: 28px;
+  height: 28px;
+}
+
+.icon.blue {
+  background: #e6eeff;
+}
+
+.icon.red {
+  background: #ffeaea;
+}
+
+.info strong {
+  display: block;
+  font-size: 15px;
+}
+
+.info span,
+.info small {
+  display: block;
+  font-size: 13px;
+  color: #777;
+  margin-top: 2px;
+}
+
+/* ✅ VISIT WEBSITE — FIGMA MATCH */
+.visit-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 10px 0 14px;
+  text-decoration: none;
+}
+
+.visit-btn.blue {
+  color: #2f6bff;
+  background: #FAFAFA;
+  padding: 9.72px;
+
+}
+
+.visit-btn.red {
+  color: #ff7372;
+  background: #FAFAFA;
+  padding: 9.72px;
+
+}
+
+/* View button */
+.view-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  position: relative;      /* IMPORTANT */
+  width: 290px;
+}
+
+
+
+.my-teams {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  font-family: system-ui, sans-serif;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.my-teams h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+/* Scroll area */
+.team-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.team-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.team-list::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+/* Row */
+.team-item {
+  background: #fafafa;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Left side */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.left img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.info strong {
+  display: block;
+  font-size: 14px;
+}
+
+.info span {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Contact button */
+.contact-btn {
+  background: #dff5f7;
+  color: #2f7f85;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+
+.my-teams {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  font-family: system-ui, sans-serif;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.my-teams h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+/* Scroll area */
+.team-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.team-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.team-list::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+/* Row */
+.team-item {
+  background: #fafafa;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Left side */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.left img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.info strong {
+  display: block;
+  font-size: 14px;
+}
+
+.info span {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Contact button */
+.contact-btn {
+  background: #dff5f7;
+  color: #2f7f85;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+
+
+
+
 .timeoff-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
 }
 
-/* TIMEOFF CARDS */
-/* ================= TIMEOFF CARDS (NO SCROLL) ================= */
-
-.timeoff-cards {
-  display: flex;
-  gap: 16px;
-  overflow: hidden;
-  padding-bottom: 0;
-}
-
-.timeoff-card {
-  flex: 1; /* cards distribute evenly */
-  min-width: 0; /* prevents overflow */
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
-  text-align: center;
-}
-
-/* DROPDOWN */
 .dropdown {
   position: relative;
 }
 
 .dropdown-menu {
   position: absolute;
-  top: 44px;
+  top: 48px;
   right: 0;
+  width: 220px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
-  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
   display: none;
+  overflow: hidden;
+  z-index: 20;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown.open .dropdown-menu {
   display: block;
 }
 
-.dropdown-menu div {
+.dropdown-menu button {
+  width: 100%;
   padding: 12px 16px;
+  border: none;
+  background: #fff;
+  text-align: left;
   cursor: pointer;
 }
 
-.dropdown-menu div:hover {
-  background: #f1f5f9;
-}
-
-/* RECORD ROW */
-.record-row,
-.team-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 14px;
-  background: #f8fafc;
-  margin-bottom: 10px;
-}
-
-.pill-warning {
-  background: #fde68a;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-}
-.benefits-title {
-  margin-bottom: 16px;
-  font-size: 24px;
-  font-weight: 700;
+.dropdown-menu button:hover {
+  background: #f5f7ff;
 }
 
 
-/* BENEFITS */
-.benefit-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  background: #fff;
-  border-radius: 14px;
-  padding: 16px;
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
-  margin-bottom: 14px;
 
-  width: 100%;        /* 🔥 FULL WIDTH */
-  margin: 0;          /* 🔥 REMOVE OFFSET */
+/* ================= RESPONSIVE ================= */
+
+/* -------- Tablets (≤1024px) -------- */
+@media (max-width: 1024px) {
+  .timeout-container {
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .aside-left,
+  .aside-right {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    width: 100%;
+  }
 }
 
-.b-card {
-  width: 96%;
-  background-color: #fff;
-  display: flex;
-  flex-direction: row;
-  gap: 100px;
-  padding: 2%;
-   padding-bottom: 25px;
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
-  border-radius: 30px;
-}
-.b-center {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  margin-left: -110px;
-}
-.globe {
-  text-decoration: none;
-  /* color: blue; */
-}
-.globe button {
-  border: none;
-  padding: 10px;
-  width: 400px;
-  color: #4f6bed;
-  /* background-color: #FFFFFF; */
-  background: #fafafa;
-}
-.globe2 button {
-  border: none;
-  padding: 10px;
-  width: 400px;
- color: #FF7372;
+/* -------- Mobile (≤768px) -------- */
+@media (max-width: 768px) {
+  .timeout-container {
+    margin: 12px;
+    gap: 16px;
+  }
 
-  /* background-color: #FFFFFF; */
-  background: #fafafa;
-}
+  .card-complaint,
+  .card-benefits,
+  .team-card,
+  .my-teams {
+    padding: 16px;
+    border-radius: 16px;
+  }
 
-.b-view button {
- border: grey solid 1px;
-  padding: 10px;
-  width: 400px;
-  /* background-color: #FFFFFF; */
-  background: #fafafa;
-}
+  /* Header */
+  .timeoff-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 
-.timeoff-wrapper {
-  width: 100%;
-  padding: 40px 40px; /* ← add horizontal padding */
-  margin: 0;
-}
+  .dropdown {
+    width: 100%;
+  }
 
+  .dropdown-btns {
+    width: 100%;
+  }
 
-.timeoff-layout {
-  display: grid;
-  grid-template-columns: 2.2fr 1fr;
-  gap: 24px;
+  .but1 {
+    flex: 1;
+  }
+
+  /* Timeoff cards scroll nicely */
+  .status-cards {
+    gap: 12px;
+  }
+
+  .timeoff-card {
+    width: 180px;
+  }
+
+  /* Benefits */
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Right side */
+  .records {
+    max-height: 240px;
+  }
+
+  .my-teams {
+    height: auto;
+  }
 }
 
-.timeoff-left,
-.timeoff-right {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
+/* -------- Small phones (≤480px) -------- */
+@media (max-width: 480px) {
+  h3 {
+    font-size: 18px;
+  }
 
-/* SCROLL PANELS */
-.record-scroll,
-.team-scroll {
-  max-height: 420px;
-  overflow-y: auto;
-  padding-right: 6px;
-}
+  .timeoff-card {
+    width: 160px;
+    padding: 16px;
+  }
 
-/* FIGMA SCROLLBAR */
-.record-scroll::-webkit-scrollbar,
-.team-scroll::-webkit-scrollbar {
-  width: 6px;
-}
+  .arc-container {
+    height: 80px;
+  }
 
-.record-scroll::-webkit-scrollbar-thumb,
-.team-scroll::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 999px;
-}
+  .arc-text {
+    top: 28px;
+  }
 
-.record-row img {
-  border-radius: 50%;
-}
-.team-row img {
-  border-radius: 50%;
-}
+  .btn,
+  .view-btn,
+  .visit-btn {
+    font-size: 13px;
+    padding: 9px;
+  }
 
+  .record {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 
-/* ===== Timeoff Record Layout Fix ===== */
+  .badge {
+    align-self: flex-end;
+  }
 
-.record-item {
-  align-items: flex-start;
-}
+  .team-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 
-.record-content {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.record-role {
-  font-size: 13px;
-  color: #6b7280;
-}
-
-.record-dates {
-  font-size: 12px;
-  color: #6b7280;
-  margin-top: 6px;
-}
-
-.record-dates span {
-  margin: 0 6px;
-}
-
-.pill-right {
-  margin-left: auto;
-  align-self: center;
+  .contact-btn {
+    align-self: flex-end;
+  }
 }
