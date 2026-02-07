@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCakeCandles } from "@fortawesome/free-solid-svg-icons";
 
-import NavClone from "./NavClone";
+import NavClone from "../components/NavClone";
 import SubNav from "../components/SubNav";
-import HomeHeader from "./HomeHeader";
-import TimeoffSection from "./TimeoffSection";
+import HomeHeader from "../components/HomeHeader";
+import TimeoffSection from "../components/TimeoffSection";
 
 function HomeTop() {
   const [time, setTime] = useState(new Date());
@@ -78,7 +78,7 @@ function HomeTop() {
         {/* ACTIVITY */}
         <div className="card activity-card">
           <h3>
-            Activity <span className="count">5</span>
+            Activity <span className="count">&nbsp;5&nbsp;</span>
           </h3>
 
           <div className="activity-list">

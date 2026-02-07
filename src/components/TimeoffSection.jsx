@@ -15,7 +15,6 @@ function TimeoffSection() {
             {/* HEADER */}
             <div className="timeoff-header">
               <h3>Timeoff</h3>
-
               <div className={`dropdown ${open ? "open" : ""}`}>
                 <div className="dropdown-btns">
                   <button className="but1">Request Other Timeoffs</button> &nbsp;

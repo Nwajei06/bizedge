@@ -4,6 +4,7 @@ import DashboardHero from "./components/DashboardHero";
 import EmployeeOverviewSection from "./components/EmployeeOverviewSection";
 import Home from "./pages/Home";
 import "./global.css";
+import FileComplaint from "./pages/FileComplaint";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
 
         />
              <Route path="/home" element={<Home />} />
+             <Route path="/file-complaint" element={<FileComplaint />} />
       </Routes>
     </>
   );

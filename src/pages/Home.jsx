@@ -1,6 +1,8 @@
 import React from 'react'
-import HomeTop from '../components/HomeTop'
+import HomeTop from './HomeTop'
 import "../home.css"
+import "../fileComplaint.css"
+import FileComplaint from './FileComplaint'
 
 function Home() {
   return (

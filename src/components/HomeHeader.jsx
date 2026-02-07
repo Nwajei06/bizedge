@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function HomeHeader() {
   const [open, setOpen] = useState(false);
@@ -10,25 +11,30 @@ function HomeHeader() {
         <p className="home-greeting">Good Morning,</p>
         <h1 className="home-username">Williams Oluwadamilare</h1>
       </div>
+<div className="home-header-right">
+  <button
+    className="more-actions-btn"
+    onClick={(e) => {
+      e.stopPropagation();
+      setOpen(prev => !prev);
+    }}
+  >
+    More Actions
+    <span className="caret">⌄</span>
+  </button>
 
-      {/* RIGHT */}
-      <div className="home-header-right">
-        <button
-          className="more-actions-btn"
-          onClick={() => setOpen(!open)}
-        >
-          More Actions
-          <span className="caret">⌄</span>
-        </button>
+  {open && (
+    <div
+      className="actions-dropdown"
+      onClick={(e) => e.stopPropagation()}
+    >
+    <NavLink style={{textDecoration:"none", color:"#545354"}}> <div className="dropdown-item">Report Asset issue</div></NavLink> 
+    <NavLink style={{textDecoration:"none", color:"#545354"}}>  <div className="dropdown-item">Expense Request</div></NavLink> 
+     <NavLink to="/file-complaint" style={{textDecoration:"none", color:"#545354"}}><div className="dropdown-item">File a complaint</div></NavLink> 
+    </div>
+  )}
+</div>
 
-        {open && (
-          <div className="actions-dropdown">
-            <div className="dropdown-item">Report Asset issue</div>
-            <div className="dropdown-item">Expense Request</div>
-            <div className="dropdown-item">File a complaint</div>
-          </div>
-        )}
-      </div>
     </div>
   );
 }

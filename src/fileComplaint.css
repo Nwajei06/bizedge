@@ -1,0 +1,256 @@
+.complaint-page {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.complaint-card {
+  width: 420px;
+  background: #fff;
+  /* border-radius: 18px; */
+  padding: 24px;
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.08); */
+  font-family: system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+}
+
+.back {
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+}
+
+h2 {
+  margin: 8px 0 4px;
+}
+
+.sub {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* TOGGLE */
+.complaint-toggle {
+  display: flex;
+  gap: 16px;
+  background: #f2f2f2;
+  padding: 10px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+.pill {
+  flex: 1;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #444;
+  transition: all 0.2s ease;
+}
+
+.pill input {
+  display: none;
+}
+
+.pill.active {
+  background: #eaf8fa;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Labels */
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 14px 0 6px;
+  display: block;
+}
+
+/* Inputs */
+.input,
+.textarea,
+.select-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid #ddd;
+  font-size: 14px;
+}
+
+.input:focus,
+.textarea:focus,
+.select-box.active .select-input {
+  border-color: #2aa8ad;
+  outline: none;
+}
+
+/* Select */
+.select-box {
+  position: relative;
+}
+
+.select-input {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.select-dropdown {
+  position: absolute;
+  width: 100%;
+  top: 54px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  max-height: 260px;
+  overflow-y: auto;
+  z-index: 20;
+}
+
+.option {
+  padding: 14px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.option:hover,
+.option.selected {
+  background: #eaf8fa;
+}
+
+/* Textarea */
+.textarea {
+  min-height: 110px;
+  resize: none;
+}
+
+/* Visibility */
+.visibility-box {
+  background: #f6f6f6;
+  padding: 16px;
+  border-radius: 16px;
+  margin: 18px 0;
+}
+
+.visibility-box label {
+  display: inline-flex;
+  gap: 6px;
+  margin-right: 16px;
+}
+
+/* Upload */
+.upload-box {
+  border: 2px dashed #2aa8ad;
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  color: #2aa8ad;
+  transition: transform 0.2s ease;
+}
+
+.upload-box:hover {
+  transform: scale(1.02);
+}
+
+.file-preview {
+  background: #eaf8fa;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cancel {
+  flex: 1;
+  background: #eaf8fa;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.submit {
+  flex: 1;
+  background: #2aa8ad;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Divider above radios */
+.section-divider {
+  height: 1px;
+  background: #e6e6e6;
+  margin: 18px 0 20px;
+}
+
+/* Radio container */
+.radio-wrapper {
+  display: flex;
+  gap: 28px;
+  background: #f5f4f3;
+  padding: 16px 20px;
+  border-radius: 18px;
+  margin-bottom: 28px;
+}
+
+/* Each option */
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Circle */
+.radio-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #9ca3af;
+  position: relative;
+}
+
+/* Inner filled circle (active) */
+.radio-item.active .radio-circle {
+  border-color: #2aa8ad;
+}
+
+.radio-item.active .radio-circle::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  background: #2aa8ad;
+  border-radius: 50%;
+}
+
+/* Active text */
+.radio-item.active .radio-text {
+  color: #2aa8ad;
+  font-weight: 600;
+}

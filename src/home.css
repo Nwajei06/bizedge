@@ -5,6 +5,7 @@
   padding: 40px;
 }
 
+
 /* =========================
    RESPONSIVE – HOME TOP
    ========================= */
@@ -376,6 +377,28 @@
 }
 
 /* DROPDOWN */
+/* RIGHT ALIGN */
+.home-header-right {
+  margin-left: auto;
+  position: relative;
+}
+
+/* BUTTON */
+.more-actions-btn {
+  background: #4a67d6;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* DROPDOWN */
 .actions-dropdown {
   position: absolute;
   top: 52px;
@@ -385,22 +408,20 @@
   box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
   width: 220px;
   overflow: hidden;
-  display: none;
+  z-index: 100;
 }
 
-.home-header-right:hover .actions-dropdown {
-  display: block;
-}
-
-.actions-dropdown div {
+/* ITEMS */
+.dropdown-item {
   padding: 14px 16px;
   font-size: 14px;
   cursor: pointer;
 }
 
-.actions-dropdown div:hover {
+.dropdown-item:hover {
   background: #f1f5f9;
 }
+
 
 /* ---------- TABLET ---------- */
 @media (max-width: 1024px) {
@@ -522,8 +543,9 @@
 .aside-left{
   display: flex;
   flex-direction: column;
-  gap:30px;
+  gap:100px;
   width: 69%;
+  
   /* border: #475569 solid 1px; */
   border-radius: 30px;
   /* height: 50%; */
@@ -548,6 +570,7 @@
   padding: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   font-family: system-ui, sans-serif;
+  height: 530px;
 
 }
 
@@ -758,9 +781,10 @@ color: white;
 
 .dot {
   width: 6px;
-  height: 6px;
+  height: 3px;
   background: #ddd;
   border-radius: 50%;
+  margin-top: 50px;
 }
 
 .dot.active {
@@ -1364,3 +1388,17 @@ max-height: 280px;
     align-self: flex-end;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
