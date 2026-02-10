@@ -5,6 +5,8 @@ import EmployeeOverviewSection from "./components/EmployeeOverviewSection";
 import Home from "./pages/Home";
 import "./global.css";
 import FileComplaint from "./pages/FileComplaint";
+import EmployeeComplaint from "./pages/EmployeeComplaint";
+import Complaints from "./pages/Complaints";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         />
              <Route path="/home" element={<Home />} />
              <Route path="/file-complaint" element={<FileComplaint />} />
+             <Route path="/employee-complaint" element={<EmployeeComplaint />} />
+             <Route path="/complaint" element={<Complaints />} />
       </Routes>
     </>
   );

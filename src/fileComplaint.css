@@ -69,9 +69,11 @@ h2 {
 /* Labels */
 .label {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: bold;
   margin: 14px 0 6px;
   display: block;
+  color: black;
+  word-spacing: 2px;
 }
 
 /* Inputs */
@@ -217,6 +219,7 @@ h2 {
 .radio-item {
   display: flex;
   align-items: center;
+  justify-content: ce;
   gap: 10px;
   cursor: pointer;
   font-size: 15px;
@@ -225,32 +228,523 @@ h2 {
 }
 
 /* Circle */
+/* Outer circle */
 .radio-circle {
   width: 18px;
   height: 18px;
   border-radius: 50%;
   border: 2px solid #9ca3af;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Inner filled circle (active) */
+/* Active outer */
 .radio-item.active .radio-circle {
   border-color: #2aa8ad;
 }
 
+/* Inner dot — PERFECTLY centered */
 .radio-item.active .radio-circle::after {
   content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
   width: 8px;
   height: 8px;
   background: #2aa8ad;
   border-radius: 50%;
 }
 
+
 /* Active text */
 .radio-item.active .radio-text {
   color: #2aa8ad;
   font-weight: 600;
+  border: #2aa8ad;
+  /* background: #2aa8ad; */
+
+}
+
+
+.visibility-group {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+/* label */
+.vis-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #444;
+}
+
+/* FULL RESET of radio */
+.vis {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #9ca3af;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* inner dot */
+.vis::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background:  #2aa8ad;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.15s ease;
+}
+
+/* CHECKED STATE — BORDER + DOT */
+.vis:checked {
+  border-color:  #2aa8ad
+;
+}
+
+.vis:checked::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* TEXT HIGHLIGHT */
+.vis:checked + .vis-text {
+  color:  #2aa8ad
+;
+  font-weight: 600;
+}
+
+
+
+/* DATE FIELD */
+.date-field {
+  position: relative;
+}
+
+.date-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.date-input.active {
+  border-color: #2aa8ad;
+}
+
+.calendar-icon {
+  opacity: 0.6;
+}
+
+/* MODAL */
+.date-modal {
+  position: absolute;
+  top: 58px;
+  left: 0;
+  width: 320px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  padding: 16px;
+  z-index: 30;
+}
+
+/* HEADER */
+.date-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.close {
+  cursor: pointer;
+}
+
+/* MONTH NAV */
+.date-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.arrows {
+  display: flex;
+  gap: 14px;
+  cursor: pointer;
+}
+
+/* CALENDAR */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  text-align: center;
+}
+
+.day-head {
+  font-size: 12px;
+  color: #888;
+}
+
+.day {
+  padding: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.day:hover {
+  background: #eaf8fa;
+}
+
+.day.selected {
+  background: #2aa8ad;
+  color: #fff;
+}
+
+/* SUBMIT */
+.date-submit {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #2aa8ad;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+
+
+/* -----------------------employeeScomplaint---------------------------- */
+
+/* MODAL OVERLAY */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* MODAL */
+.employee-modal {
+  width: 420px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* HEADER */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close {
+  cursor: pointer;
+}
+
+/* FILTERS */
+.modal-filters {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.modal-filters input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.dept-select {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+/* LIST */
+.employee-list {
+  max-height: 280px;
+  overflow-y: auto;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.employee-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.employee-row.active,
+.employee-row:hover {
+  background: #eaf8fa;
+}
+
+.employee-row img {
+  border-radius: 50%;
+}
+
+.emp-info {
+  flex: 1;
+  font-size: 14px;
+}
+
+.emp-info span {
+  font-size: 13px;
+  color: #777;
+}
+
+.emp-dept {
+  font-size: 13px;
+  color: #666;
+}
+
+/* BUTTON */
+.select-btn {
+  margin-top: 16px;
+  width: 100%;
+  background: #2aa8ad;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.select-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ------------------------------COMPLAINT PAGE---------------------------- */
+
+/* ---------------- COMPLAINT PAGE ---------------- */
+
+.general-complaint {
+  padding: 40px;
+  background: #fff;
+}
+
+/* HEADER */
+.gen-comp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.gen-comp-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.gen-comp-header button {
+  padding: 12px 20px;
+  width: 200px;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  background-color: #2aa8ad;
+  color: white;
+  cursor: pointer;
+}
+
+/* TOGGLE BUTTONS */
+.you-against-but {
+  display: inline-flex;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 999px;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.you-against-but button {
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #666;
+}
+
+.you-against-but button.active {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* SEARCH + FILTERS */
+.search-comp {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-comp input {
+  width: 260px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid #e1e1e1;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+
+
+.search-comp select {
+  height: 42px;
+  min-width: 160px;
+  border-radius: 10px;
+  border: 1px solid #e1e1e1;
+  padding: 0 36px 0 12px;
+  font-size: 13px;
+  background-color: #fff;
+  cursor: pointer;
+
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+thead {
+  background: #f7f7f7;
+}
+
+th {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  padding: 14px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+td {
+  padding: 14px;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background: #fafafa;
+  cursor: pointer;
+}
+
+/* EMPTY STATE */
+p {
+  font-size: 14px;
+  color: #777;
+  margin-top: 40px;
+}
+
+/* -------- FILTER DROPDOWNS -------- */
+/* -------- FILTER DROPDOWNS (NO LAYOUT SHIFT) -------- */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  height: 40px;
+  padding: 0 34px 0 14px;
+  border-radius: 10px;
+  border: 1px solid #e1e1e1;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  color: #555;
+  min-width: 150px;
+  text-align: left;
+  position: relative;
+}
+
+.dropdown-btn::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 10px;
+  height: 6px;
+  transform: translateY(-50%);
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23999' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+
+/* KEY FIX IS HERE */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 230px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  padding: 6px 0;
+  display: none;
+  z-index: 999;
+}
+
+/* FLOAT ONLY – NO SPACE TAKEN */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu p {
+  margin: 0;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #444;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+.dropdown-menu p:hover {
+  background: #f3f3f3;
 }

@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+
 
 function HomeHeader() {
   const [open, setOpen] = useState(false);
@@ -20,7 +23,8 @@ function HomeHeader() {
     }}
   >
     More Actions
-    <span className="caret">⌄</span>
+    <span className="caret"><FontAwesomeIcon icon={faChevronDown} />
+</span>
   </button>
 
   {open && (
