@@ -4,9 +4,11 @@ import DashboardHero from "./components/DashboardHero";
 import EmployeeOverviewSection from "./components/EmployeeOverviewSection";
 import Home from "./pages/Home";
 import "./global.css";
+import "./hr.css"
 import FileComplaint from "./pages/FileComplaint";
 import EmployeeComplaint from "./pages/EmployeeComplaint";
 import Complaints from "./pages/Complaints";
+import HrHome from "./pages/HrHome";
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
              <Route path="/file-complaint" element={<FileComplaint />} />
              <Route path="/employee-complaint" element={<EmployeeComplaint />} />
              <Route path="/complaint" element={<Complaints />} />
+             <Route path="/hr" element={<HrHome />} />
       </Routes>
     </>
   );

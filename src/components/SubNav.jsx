@@ -27,6 +27,9 @@ function SubNav() {
         <NavLink to="/performance" className="subnav-link">
           Performance Review
         </NavLink>
+        <NavLink to="/complaint" className="subnav-link">
+          Complaints
+        </NavLink>
         <NavLink to="/assets" className="subnav-link">
           Assets
         </NavLink>
