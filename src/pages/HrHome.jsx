@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavClone from "../components/NavClone";
 import HrNav from "../components/HrNav";
-
+import { NavLink } from "react-router-dom";
 function HrHome() {
   const [periodOpen, setPeriodOpen] = useState(false);
   const [period, setPeriod] = useState("Year to date");
@@ -39,12 +39,12 @@ function HrHome() {
                       {p}
                     </p>
                   ))}
-                </div>
+                </div> 
               )}
             </div>
           </div>
 
-          <button className="primary-btn">File A Complaint</button>
+        <NavLink to="/hr-file-complaint"  style={{textDecoration:"none"}}>  <button className="primary-btn">File A Complaint</button> </NavLink>
         </div>
 
         {/* STATS + CHART */}

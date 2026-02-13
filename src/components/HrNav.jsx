@@ -4,11 +4,11 @@ import { NavLink } from "react-router-dom";
 function HrNav() {
   return (
     <div className="hr-nav">
-      <NavLink to="/hr" className="hr-nav-link">
+      <NavLink to="/hr" className="hr-nav-link active">
         Overview
       </NavLink>
 
-      <NavLink to="/" className="hr-nav-link active">
+      <NavLink to="/hr-complaint" className="hr-nav-link ">
         Complaints
       </NavLink>
 
