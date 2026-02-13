@@ -56,10 +56,10 @@ function DashboardHero() {
             <div className="legend">
               <div><i className="dot absenteeism"></i> Absenteeism</div>
               <div><i className="dot bullying"></i> Bullying</div>
-              <div><i className="dot harassment"></i> Sexual harassment</div>
-              <div><i className="dot insubordination"></i> Insubordination</div>
+              {/* <div><i className="dot harassment"></i> Sexual harassment</div> */}
+              {/* <div><i className="dot insubordination"></i> Insubordination</div>
               <div><i className="dot lateness"></i> Lateness</div>
-              <div><i className="dot unspecified"></i> Not Specified</div>
+              <div><i className="dot unspecified"></i> Not Specified</div> */}
             </div>
           </div>
 
